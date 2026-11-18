@@ -100,6 +100,7 @@
     .view-enter [role="tablist"] { row-gap: 14px; }
     .view-enter [role="tablist"][aria-label="Disciplines"], .view-enter [role="tablist"][aria-label="Experience groups"] { margin-bottom: 6px; }
     .view-enter .links-col { row-gap: 24px; padding-block: 10px; }
+    .view-enter .socials-row { row-gap: 20px; }
   }
   .view-enter :is(a[href], button, [role="tab"]):not(.absolute):not(.fixed):not(.sticky) { position: relative; }
   .view-enter :is(a[href], button, [role="tab"])::after {
@@ -2212,6 +2213,7 @@ const ME = {
   social: [
     ['X', 'https://x.com/flaviovlso', '@flaviovlso'],
     ['LinkedIn', 'https://www.linkedin.com/in/fl%C3%A1vio-veloso-a29b02254/', 'flávio-veloso'],
+    ['GitHub', 'https://github.com/flaviohcveloso', 'flaviohcveloso'],
   ],
   lead: 'I work at the intersection of sales, marketing and content, with a strong focus on outbound and inbound strategy, content creation and brand clarity.',
   body: [
@@ -2258,7 +2260,7 @@ function Socials() {
   return html`
     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t-[1.5px] border-ink/80 py-2.5">
       <span className="tag text-ink/65 w-14 shrink-0">Social</span>
-      <span className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-[13px]">
+      <span className="socials-row flex flex-wrap gap-x-5 gap-y-1 font-mono text-[13px]">
         ${ME.social.map(([k, u, label]) => html`
           <a key=${k} href=${u} target="_blank" rel="noopener noreferrer" className="nav-btn group inline-flex items-baseline gap-1.5 hover:text-sky">
             <span className="tag text-ink/65 group-hover:text-sky">${k}</span>${label}<span aria-hidden="true">↗</span>
